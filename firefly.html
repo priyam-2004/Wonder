@@ -22,8 +22,7 @@
             background: radial-gradient(circle, rgba(178, 178, 52, 0.8) 20%, rgba(0, 0, 0, 0.8) 80%);
             filter: blur(4px);
             box-shadow: 0 0 15px rgba(142, 127, 39, 0.9);
-            animation: flicker 3s infinite alternate ease-in-out;
-            transition: all 0.5s ease;
+            animation: flicker 2s infinite alternate ease-in-out;
         } 
 
         @keyframes flicker {
@@ -38,7 +37,7 @@
             background: radial-gradient(circle, rgba(90, 87, 34, 0.893) 20%, rgba(0, 0, 0, 0.8) 80%);
             filter: blur(4px);
             box-shadow: 0 0 15px rgba(83, 75, 28, 0.9);
-            animation: flicker 3s infinite alternate ease-in-out;
+            animation: flicker 2s infinite alternate ease-in-out;
         }
 
         .quote {
@@ -107,6 +106,8 @@
 </head>
 
 <body>
+
+    <iframe src="music.html" allow="autoplay" style="display: none;"></iframe>
     
     <div class="fly" data-quote="The moment I enter the woods, I feel the rest of the world slip away" style="top: 5%; left: 10%; width: 30px; height: 30px;"></div>
     <div class="fly" data-quote="Magic of the wild is still out there — I simply have to be patient and look harder for it." style="top: 15%; left: 25%; width: 40px; height: 40px;"></div>
@@ -247,4 +248,6 @@ function typeMessage(elementId, paragraphs) {
     </script>
 </body>
 </html>
+
+
 
