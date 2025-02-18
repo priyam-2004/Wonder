@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fireflies</title>
+    <style>
+        body {
+            background: #150a30;
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        } 
+         
+        .fly {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(178, 178, 52, 0.8) 20%, rgba(0, 0, 0, 0.8) 80%);
+            filter: blur(4px);
+            box-shadow: 0 0 15px rgba(142, 127, 39, 0.9);
+            animation: flicker 3s infinite alternate ease-in-out;
+            transition: all 0.5s ease;
+        } 
+
+        @keyframes flicker {
+            0% { opacity: 0.8; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.9; transform: scale(1.05); }
+        }
+
+        .dimmed {
+            position: absolute;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(90, 87, 34, 0.893) 20%, rgba(0, 0, 0, 0.8) 80%);
+            filter: blur(4px);
+            box-shadow: 0 0 15px rgba(83, 75, 28, 0.9);
+            animation: flicker 3s infinite alternate ease-in-out;
+        }
+
+        .quote {
+            font-family: "Montserrat", serif;
+            font-weight: lighter;
+            position: absolute;
+            color: bisque;
+            font-size: 14px;
+            padding: 15px;
+            max-width: 175px;
+        }
+
+        .fly:hover + .quote {
+            display: block;
+        }
+
+        #final-message {
+            font-family: "Montserrat", serif;
+            font-weight: lighter;
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 16px;
+            color: black;
+            text-align: center;
+            max-width: 95%;
+        }
+    
+        @media (max-width: 768px) {
+            .fly {
+                width: 20px !important;
+                height: 20px !important;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .fly {
+                width: 15px !important;
+                height: 15px !important;
+            }
+        }
+
+        .fly:nth-child(1) { top: 10%; left: 20%; width: 30px; height: 30px; animation-duration: 2.5s; animation-delay: 0.2s; }
+        .fly:nth-child(2) { top: 50%; left: 60%; width: 40px; height: 40px; animation-duration: 2s; animation-delay: 0.5s; }
+        .fly:nth-child(3) { top: 80%; left: 30%; width: 50px; height: 50px; animation-duration: 3s; animation-delay: 1s; }
+        .fly:nth-child(4) { top: 20%; left: 80%; width: 35px; height: 35px; animation-duration: 2.5s; animation-delay: 0.8s; }
+        .fly:nth-child(5) { top: 70%; left: 50%; width: 25px; height: 25px; animation-duration: 2s; animation-delay: 0.3s; }
+        .fly:nth-child(6) { top: 15%; left: 40%; width: 20px; height: 20px; animation-duration: 3s; animation-delay: 1.2s; }
+        .fly:nth-child(7) { top: 35%; left: 75%; width: 45px; height: 45px; animation-duration: 2.5s; animation-delay: 0.4s; }
+        .fly:nth-child(8) { top: 85%; left: 15%; width: 28px; height: 28px; animation-duration: 2s; animation-delay: 0.7s; }
+        .fly:nth-child(9) { top: 12%; left: 55%; width: 22px; height: 22px; animation-duration: 3s; animation-delay: 0.9s; }
+        .fly:nth-child(10) { top: 45%; left: 30%; width: 26px; height: 26px; animation-duration: 2.5s; animation-delay: 0.6s; }
+        .fly:nth-child(11) { top: 65%; left: 85%; width: 34px; height: 34px; animation-duration: 2s; animation-delay: 1.4s; }
+        .fly:nth-child(12) { top: 5%; left: 90%; width: 18px; height: 18px; animation-duration: 3s; animation-delay: 0.1s; }
+        .fly:nth-child(13) { top: 78%; left: 40%; width: 32px; height: 32px; animation-duration: 2.5s; animation-delay: 0.5s; }
+        .fly:nth-child(14) { top: 25%; left: 15%; width: 27px; height: 27px; animation-duration: 2s; animation-delay: 1.1s; }
+        .fly:nth-child(15) { top: 60%; left: 70%; width: 29px; height: 29px; animation-duration: 3s; animation-delay: 0.4s; }
+        .fly:nth-child(16) { top: 90%; left: 10%; width: 24px; height: 24px; animation-duration: 2.5s; animation-delay: 0.9s; }
+        .fly:nth-child(17) { top: 18%; left: 65%; width: 36px; height: 36px; animation-duration: 2.7s; animation-delay: 1.3s; }
+        .fly:nth-child(18) { top: 35%; left: 5%; width: 31px; height: 31px; animation-duration: 4.3s; animation-delay: 0.6s; }
+        .fly:nth-child(19) { top: 50%; left: 45%; width: 38px; height: 38px; animation-duration: 3.4s; animation-delay: 0.7s; }
+        .fly:nth-child(20) { top: 60%; left: 95%; width: 33px; height: 33px; animation-duration: 3s; animation-delay: 1.5s; }
+    </style>
+</head>
+
+<body>
+    
+    <div class="fly" data-quote="The moment I enter the woods, I feel the rest of the world slip away" style="top: 5%; left: 10%; width: 30px; height: 30px;"></div>
+    <div class="fly" data-quote="Magic of the wild is still out there — I simply have to be patient and look harder for it." style="top: 15%; left: 25%; width: 40px; height: 40px;"></div>
+    <div class="fly" data-quote="The light is both meditative and magical." style="top: 20%; left: 70%; width: 35px; height: 35px;"></div>
+    <div class="fly" data-quote="I must record my witness to this magic—otherwise I might feel I’ve dreamed it." style="top: 30%; left: 50%; width: 28px; height: 28px;"></div>
+    <div class="fly" data-quote="Maybe I am the visitor in their world?" style="top: 35%; left: 87%; width: 25px; height: 25px;"></div>
+    <div class="fly" data-quote="You never know what treasures you may find in the forest." style="top: 45%; left: 20%; width: 20px; height: 20px;"></div>
+    <div class="fly" data-quote="Fairy tales often begin in the deep forest" style="top: 50%; left: 60%; width: 45px; height: 45px;"></div>
+    <div class="fly" data-quote="The woods are a sanctuary, offering gifts that should be left for those who call it home." style="top: 55%; left: 85%; width: 28px; height: 28px;"></div>
+    <div class="fly" data-quote="The woods are a sanctuary, offering gifts that should be left for those who call it home." style="top: 60%; left: 15%; width: 22px; height: 22px;"></div>
+    <div class="fly" data-quote="Small pieces of the wild tell stories of the earth." style="top: 65%; left: 35%; width: 26px; height: 26px;"></div>
+    <div class="fly" data-quote="A forest after rain carries a scent that lingers in memory like an old spell." style="top: 70%; left: 90%; width: 34px; height: 34px;"></div>
+    <div class="fly" data-quote="Even in a less rural landscape, the magic of the wild finds a way to whisper to those who listen." style="top: 75%; left: 5%; width: 18px; height: 18px;"></div>
+    <div class="fly" data-quote="Some animals remain on my bucket list, but nature has already granted me a multitude of blessings" style="top: 80%; left: 40%; width: 32px; height: 32px;"></div>
+    <div class="fly" data-quote="The woods hold unexpected beauty, a reminder that things aren’t always as they appear." style="top: 83%; left: 70%; width: 27px; height: 27px;"></div>
+    <div class="fly" data-quote="I challenge you to wander" style="top: 88%; left: 30%; width: 29px; height: 29px;"></div>
+    <div class="fly" data-quote="Let the light reveal nature’s enchantment." style="top: 90%; left: 75%; width: 24px; height: 24px;"></div>
+    <div class="fly" data-quote="This sense of unexpected beauty is certainly part of nature’s allure." style="top: 87%; left: 50%; width: 36px; height: 36px;"></div>
+    <div class="fly" data-quote="They look like portals to another place, a reminder that things aren’t always as they appear on the surface." style="top: 80%; left: 20%; width: 31px; height: 31px;"></div>
+    <div class="fly" data-quote="How can one sustain a sense of enchantment when returning home to the everyday world" style="top: 75%; left: 60%; width: 38px; height: 38px;"></div>
+    <div class="fly" data-quote="So dear readers, given all the treasures nature holds, I challenge you to wander near or far" style="top: 80%; left: 83%; width: 33px; height: 33px;"></div>
+
+        <div id="quoteBox" class="quote"></div>
+        <div id="final-message"></div>
+    </div>
+
+    <script>
+    
+const flies = document.querySelectorAll('.fly');
+let interactedFlies = new Set();
+const quoteBox = document.getElementById('quoteBox');
+
+flies.forEach(fly => {
+    fly.addEventListener('mouseover', (event) => {
+        const quoteText = fly.getAttribute('data-quote');
+
+        // Display the quote near the fly
+        quoteBox.style.display = 'block';
+        quoteBox.textContent = quoteText;
+        quoteBox.style.top = event.clientY + 10 + 'px';
+        quoteBox.style.left = event.clientX + 10 + 'px';
+
+        if (!interactedFlies.has(fly)) {
+            fly.classList.add('dimmed');
+            interactedFlies.add(fly);
+        }
+
+        if (interactedFlies.size === flies.length) {
+            setTimeout(() => {
+                startFlyExpansion();
+            }, 500);
+        }
+    });
+
+    fly.addEventListener('mouseout', () => {
+        quoteBox.style.display = 'none';
+    });
+});
+
+function startFlyExpansion() {
+    flies.forEach(fly => {
+        fly.style.transition = 'transform 3s ease-out, opacity 5s ease-out';
+        fly.style.transform = 'scale(50)';  // Expands flies
+        fly.style.opacity = '0'; // Fades them out
+    });
+
+    // Wait until flies are fully faded out before changing the background
+    setTimeout(() => {
+        flies.forEach(fly => fly.remove());
+        document.body.style.transition = 'background 2s ease-in';
+        document.body.style.background = "rgba(255, 230, 100, 1)";
+
+               // Ensure the body becomes scrollable
+               document.body.style.overflow = "auto";
+
+// Show final message with typing effect
+setTimeout(() => {
+
+    typeMessage("final-message", [
+        "My introduction to nature was at my childhood home atop a mountain in West Virginia with thirty-five acres of woods to call my playground. Exploring those woods brought countless hours of delight as my siblings and I discovered flora and fungi native to Appalachia.",
+        
+        "Morel mushrooms grew wild in the forest, along with trillium, pink lady’s slipper, and the ginseng that my uncle harvested to sell to the local drugstore. I remember swinging from wild grapevines under thick canopies of trees, splashing in the nearby creek, and playing with lizards and crawdads. These are my best memories, and my love of local woods has continued into my adult life. I’m most at peace surrounded by groves of trees in the forest.",
+
+        "Currently, I live in North Carolina, in a much less rural landscape than the one I grew up in, but the magic of the wild is still out there. I simply have to be a bit more patient and look harder for it. Every morning I try to visit a municipal or state park nearby, staying close to home so I can spend more time on foot rather than in my car.",
+
+        "Dawn is the best time for me to encounter wildlife, as the light is wonderful then and I find it both meditative and magical. The moment I enter the woods, I feel the rest of the world slip away. I focus on what’s immediately in front of me and concentrate on being completely present in the moment.",
+
+        "I always carry a camera, though, to capture the elusive animals I come across and all number of magical things. Surely, I must record my witness to this magic with photography—otherwise I might feel I’ve dreamed it.",
+
+        "I’ve had some memorable hikes—sometimes it’s the animals I encounter, like the beautiful barred owl you see on these pages or a small black bear crossing the road. Other times the journey is about the color of an autumn sunset against bare trees.",
+
+        "Beside my house is a large oak tree with a hollow about twenty feet up, a hidden hideaway first discovered by my dear friend Jen during a visit a decade ago. I closely monitored that hollow afterward, and much to my delight, I once saw a tiny squirrel face peeping out at me. Then I saw two, and finally three! I dubbed it the Wee Three Tree, and a new hobby was born—watching them watching me as I visited the mailbox.",
+
+        "There are still a few spirit animals on my bucket list to witness—one is the elusive white deer sometimes spotted in this area; the other is a great horned owl that I’ve heard but never seen on my property. Hopefully nature will grant me these wishes someday, but if not, I’ll remain content with the multitude of blessings sheltered beneath mighty oak and towering pine.",
+
+        "In addition to what I see, nature appeals to all my other senses as well, offering scents, sounds, textures, and colors that are always changing with the seasons and light. This sense of unexpected beauty is certainly part of nature’s allure for me. Perhaps that’s also why so many fairy tales begin with a deep forest, equal parts welcoming and foreboding but always holding the promise of grand adventure.",
+
+        "How can one sustain a sense of enchantment when returning home to the everyday world? I generally don’t take anything from the woods, preferring to leave those gifts within the sanctuary of the forest for the inhabitants there to enjoy. But on my own property, I collect seasonal bits I find while gardening—acorns, lichen, lush clumps of moss, interesting bark, and bird nests, which I tenderly gather and preserve in a Wardian case in my kitchen.",
+
+        "So dear readers, given all the treasures nature holds, I challenge you to wander near or far. Venture out one morning, and on another day go as the light fades into the evening and note the changes. And please share your photographic observations and enchantments with us. We’d love to partake in them."
+    ]);
+}, 1000);
+}, 5000); // Wait for flies to disappear before background change
+}
+
+function typeMessage(elementId, paragraphs) {
+    const element = document.getElementById(elementId);
+    element.style.display = 'block';
+    element.innerHTML = ''; // Clears any previous text
+
+    let i = 0;
+
+    function typingEffect() {
+        if (i < paragraphs.length) {
+            let paragraphElement = document.createElement("p");
+            paragraphElement.textContent = "";
+            element.appendChild(paragraphElement);
+
+            let j = 0;
+            function typeParagraph() {
+                if (j < paragraphs[i].length) {
+                    paragraphElement.textContent += paragraphs[i].charAt(j);
+                    j++;
+                    setTimeout(typeParagraph, 20);
+                } else {
+                    i++;
+                    setTimeout(typingEffect, 500); // Delay before next paragraph starts
+                    element.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }
+            }
+            typeParagraph();
+        }
+    }
+
+    typingEffect();
+}
+
+    </script>
+</body>
+</html>
+
