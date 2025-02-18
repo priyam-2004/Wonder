@@ -1,32 +1,27 @@
 document.addEventListener("DOMContentLoaded", function () {
     let audio;
 
-    // Check if there's an existing audio player stored
-    if (sessionStorage.getItem("audioPlayer")) {
-        audio = document.getElementById("background-music");
-    } else {
-        // Create the audio element
+    // Check if audio already exists
+    if (!window.audioPlayer) {
         audio = document.createElement("audio");
         audio.id = "background-music";
-        audio.src = "audio.mp3"; // Ensure this file exists
+        audio.src = "audio.mp3";  // Make sure this file is in the same folder as index.html
         audio.loop = true;
-        audio.autoplay = true;
-        audio.volume = 0.5; // Adjust as needed
-
-        // Append audio to the document body
+        audio.volume = 0.5;
         document.body.appendChild(audio);
 
-        // Store player state in sessionStorage so it persists across pages
-        sessionStorage.setItem("audioPlayer", "playing");
+        // Store it globally so it persists across pages
+        window.audioPlayer = audio;
 
-        // Play audio (handle autoplay restrictions)
+        // Play audio
         audio.play().catch(() => {
-            console.log("Autoplay blocked, waiting for user interaction.");
+            console.log("Autoplay blocked. Waiting for user interaction.");
         });
 
-        // If user clicks anywhere, play audio (for autoplay-restricted browsers)
+        // Ensure it plays when user clicks anywhere
         document.addEventListener("click", function () {
             audio.play();
         });
     }
 });
+
