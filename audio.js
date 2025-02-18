@@ -1,21 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if the audio is already playing
-    if (!window.audioPlayer) {
-        const audio = document.createElement("audio");
-        audio.src = "audio.mp3"; // Ensure this is the correct file path
+    let audio;
+
+    // Check if there's an existing audio player stored
+    if (sessionStorage.getItem("audioPlayer")) {
+        audio = document.getElementById("background-music");
+    } else {
+        // Create the audio element
+        audio = document.createElement("audio");
+        audio.id = "background-music";
+        audio.src = "audio.mp3"; // Ensure this file exists
         audio.loop = true;
         audio.autoplay = true;
-        audio.volume = 0.5; // Adjust if needed
-        
-        document.body.appendChild(audio);
-        window.audioPlayer = audio; // Store the audio globally to persist across pages
+        audio.volume = 0.5; // Adjust as needed
 
-        // Attempt to play (some browsers block autoplay)
+        // Append audio to the document body
+        document.body.appendChild(audio);
+
+        // Store player state in sessionStorage so it persists across pages
+        sessionStorage.setItem("audioPlayer", "playing");
+
+        // Play audio (handle autoplay restrictions)
         audio.play().catch(() => {
-            console.log("Autoplay blocked. Waiting for user interaction.");
+            console.log("Autoplay blocked, waiting for user interaction.");
         });
 
-        // Allow playback on user interaction
+        // If user clicks anywhere, play audio (for autoplay-restricted browsers)
         document.addEventListener("click", function () {
             audio.play();
         });
