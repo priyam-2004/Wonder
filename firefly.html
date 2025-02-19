@@ -42,9 +42,9 @@
 
         .quote {
             font-family: "Montserrat", serif;
-            font-weight: lighter;
+            font-weight: 300;
             position: absolute;
-            color: bisque;
+            color: beige;
             font-size: 14px;
             padding: 15px;
             max-width: 175px;
@@ -56,7 +56,7 @@
 
         #final-message {
             font-family: "Montserrat", serif;
-            font-weight: lighter;
+            font-weight: 275;
             display: none;
             position: absolute;
             top: 50%;
@@ -106,27 +106,29 @@
 </head>
 
 <body>
+
+    <audio id="audio" src="audio.mp3" preload="auto"></audio>
     
-    <div class="fly" data-quote="The moment I enter the woods, I feel the rest of the world slip away" style="top: 5%; left: 10%; width: 30px; height: 30px;"></div>
+    <div class="fly" data-quote="The moment I enter the woods, I feel the rest of the world slip away." style="top: 5%; left: 10%; width: 30px; height: 30px;"></div>
     <div class="fly" data-quote="Magic of the wild is still out there — I simply have to be patient and look harder for it." style="top: 15%; left: 25%; width: 40px; height: 40px;"></div>
     <div class="fly" data-quote="The light is both meditative and magical." style="top: 20%; left: 70%; width: 35px; height: 35px;"></div>
-    <div class="fly" data-quote="I must record my witness to this magic—otherwise I might feel I’ve dreamed it." style="top: 30%; left: 50%; width: 28px; height: 28px;"></div>
+    <div class="fly" data-quote="I must record my witness to this magic—otherwise I might feel it’s a dream." style="top: 30%; left: 50%; width: 28px; height: 28px;"></div>
     <div class="fly" data-quote="Maybe I am the visitor in their world?" style="top: 35%; left: 87%; width: 25px; height: 25px;"></div>
     <div class="fly" data-quote="You never know what treasures you may find in the forest." style="top: 45%; left: 20%; width: 20px; height: 20px;"></div>
-    <div class="fly" data-quote="Fairy tales often begin in the deep forest" style="top: 50%; left: 60%; width: 45px; height: 45px;"></div>
+    <div class="fly" data-quote="Fairy tales often begin in the deep forest." style="top: 50%; left: 60%; width: 45px; height: 45px;"></div>
     <div class="fly" data-quote="The woods are a sanctuary, offering gifts that should be left for those who call it home." style="top: 55%; left: 85%; width: 28px; height: 28px;"></div>
     <div class="fly" data-quote="The woods are a sanctuary, offering gifts that should be left for those who call it home." style="top: 60%; left: 15%; width: 22px; height: 22px;"></div>
     <div class="fly" data-quote="Small pieces of the wild tell stories of the earth." style="top: 65%; left: 35%; width: 26px; height: 26px;"></div>
     <div class="fly" data-quote="A forest after rain carries a scent that lingers in memory like an old spell." style="top: 70%; left: 90%; width: 34px; height: 34px;"></div>
     <div class="fly" data-quote="Even in a less rural landscape, the magic of the wild finds a way to whisper to those who listen." style="top: 75%; left: 5%; width: 18px; height: 18px;"></div>
-    <div class="fly" data-quote="Some animals remain on my bucket list, but nature has already granted me a multitude of blessings" style="top: 80%; left: 40%; width: 32px; height: 32px;"></div>
+    <div class="fly" data-quote="Some animals remain on my bucket list, but nature has already granted me a multitude of blessings." style="top: 80%; left: 40%; width: 32px; height: 32px;"></div>
     <div class="fly" data-quote="The woods hold unexpected beauty, a reminder that things aren’t always as they appear." style="top: 83%; left: 70%; width: 27px; height: 27px;"></div>
-    <div class="fly" data-quote="I challenge you to wander" style="top: 88%; left: 30%; width: 29px; height: 29px;"></div>
+    <div class="fly" data-quote="I challenge you to wander." style="top: 88%; left: 30%; width: 29px; height: 29px;"></div>
     <div class="fly" data-quote="Let the light reveal nature’s enchantment." style="top: 90%; left: 75%; width: 24px; height: 24px;"></div>
     <div class="fly" data-quote="This sense of unexpected beauty is certainly part of nature’s allure." style="top: 87%; left: 50%; width: 36px; height: 36px;"></div>
     <div class="fly" data-quote="They look like portals to another place, a reminder that things aren’t always as they appear on the surface." style="top: 80%; left: 20%; width: 31px; height: 31px;"></div>
-    <div class="fly" data-quote="How can one sustain a sense of enchantment when returning home to the everyday world" style="top: 75%; left: 60%; width: 38px; height: 38px;"></div>
-    <div class="fly" data-quote="So dear readers, given all the treasures nature holds, I challenge you to wander near or far" style="top: 80%; left: 83%; width: 33px; height: 33px;"></div>
+    <div class="fly" data-quote="How can one sustain a sense of enchantment when returning home to the everyday world." style="top: 75%; left: 60%; width: 38px; height: 38px;"></div>
+    <div class="fly" data-quote="So dear readers, given all the treasures nature holds, I challenge you to wander near or far." style="top: 80%; left: 83%; width: 33px; height: 33px;"></div>
 
         <div id="quoteBox" class="quote"></div>
         <div id="final-message"></div>
@@ -243,10 +245,14 @@ function typeMessage(elementId, paragraphs) {
     typingEffect();
 }
 
+const audio = document.getElementById('audio');
+document.addEventListener('click', ()=> {
+
+    audio.play();
+})
+
     </script>
-    <script src="audio.js"></script>
 </body>
 </html>
-
 
 
