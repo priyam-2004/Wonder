@@ -95,7 +95,7 @@
         h2 {
             font-family: "Montserrat", serif;
             font-size: 20px;
-            font-weight: lighter;
+            font-weight: 300;
             color: white;
             margin: 10px 0 0;
             animation: flicker 2s infinite alternate;
@@ -128,12 +128,23 @@
     </style>
 </head>
 <body>
+    <audio id="audio" src="audio.mp3" preload="auto"></audio>
     <div>
         <h1>Moments of<br>Wonder</h1>
         <a href="firefly.html"><h2>Step into the magic of first time wonder</h2></a>
-<script src="audio.js"></script>
+
 </body>
+
+<script>
+    const audio = document.getElementById('audio');
+    document.addEventListener('click', ()=> {
+    
+        audio.play();
+    }) </script>
+    
 </html>
+
+
 
 
 
